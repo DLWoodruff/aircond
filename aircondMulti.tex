@@ -140,11 +140,13 @@ root node).
 \label{sec:bundling}
 
 When mpi-sppy creates bundles for a tree with branching factors
-$[B_1, B_2, \dots, B_T]$ and $s$ scenarios per bundle, it passes
-sub-tree branching factors $[1, B_2, \dots, B_T]$ to the scenario
-creator for each bundle.  Because $B_1' = 1$ in the sub-tree, all
-bundles would otherwise share identical node indices and therefore
-identical demand realisations.
+$[B_1, B_2, \dots, B_T]$, the number of scenarios per bundle, $s$,
+is specified on the command line.  If $s = B_2 \cdot B_3 \cdots B_T$
+then the bundler passes sub-tree branching factors
+$[1, B_2, \dots, B_T]$ to the scenario creator for each bundle.
+Because $B_1' = 1$ in the sub-tree, all bundles would otherwise
+share identical node indices and therefore identical demand
+realisations.
 
 To break this degeneracy, the scenario creator computes
 \[
